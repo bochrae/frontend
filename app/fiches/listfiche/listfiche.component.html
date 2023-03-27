@@ -1,0 +1,27 @@
+<button routerLink="/addf">Ajouter</button>
+
+<h2>Liste des fiches</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Url </th>
+      <th>Nom </th>
+      <th>type plat</th>
+    
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fiche of fiches">
+      <td>{{fiche.id_fiche}}</td>
+      <td>{{fiche.url_fiche}}</td>
+      <td>{{fiche.nom_fiche}}</td>
+      <td>{{fiche.type_plat}}</td>
+   
+      <td>
+        <button (click)="deleteFiche(fiche.id_fiche)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

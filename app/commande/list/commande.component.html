@@ -1,0 +1,28 @@
+<button routerLink="/addc">Ajouter</button>
+<table>
+    <thead>
+      <tr>
+        <th>Date du repas</th>
+        <th>Type de commande</th>
+        <th>Nombre/Quantité</th>
+        <th>Spécificité Régime</th>
+        <th>Spécificité Texture</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commande of commandes">      
+        <td>{{ commande.date_commande }}</td>
+        <td>{{ commande.type_commande}}</td>
+        <td>{{ commande.quantite }}</td>
+        <td>{{ commande.specificite_regime }}</td>
+        <td>{{ commande.specificite_texture }}</td>
+        <td>
+          <button >Modifier</button>
+          <button (click)="deleteCommande(commande.id_commande)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  

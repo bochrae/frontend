@@ -1,0 +1,34 @@
+<h2>Ajouter une fiche technique</h2>
+
+<form [formGroup]="ficheForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="url_fiche">URL</label>
+    
+    <input type="file" (change)="onFileSelected($event)" />
+
+  </div>
+  <div>
+    <label for="nom_fiche">Nom</label>
+    <textarea formControlName="nom_fiche"></textarea>
+  </div>
+ 
+  <div>
+    <label for="type_plat">Type Plat</label>
+    <select formControlName="type_plat">
+      <option value="entree">Entrée/Salade</option>
+      <option value="potage">Potage</option>
+      <option value="acco">Accompagnement</option>
+      <option value="prin">Plat principal</option>
+      <option value="sauce">Sauce</option>
+      <option value="dessert">Dessert</option>
+      <option value="text">Texture velours</option>
+      <option value="enrichi">Enrichi</option>
+      <option value="Aucun">Aucun</option>
+    </select>
+  </div>
+  
+  <button type="submit" >Ajouter</button>
+</form>
+<!--
+    [disabled]="!ficheForm.valid"
+-->

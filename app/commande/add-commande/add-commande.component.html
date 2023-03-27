@@ -1,0 +1,54 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label for="date">Date du repas:</label>
+  <input type="date" id="date" formControlName="date" required [(ngModel)]="myForm.value.date">
+
+  <br>
+  <br>
+  <label for="type">Type de commande:</label>
+  <select id="type" formControlName="type" [(ngModel)]="myForm.value.type">
+    <option value="client">Client</option>
+    <option value="collaborateur">Collaborateur</option>
+  </select>
+  <br>
+  <label for="quantite">Nombre/Quantité</label>
+  <input type="number" id="quantite" formControlName="quantite" required [(ngModel)]="myForm.value.quantite">
+  
+
+  <br>
+  <br>
+  <label for="regime">Spécificité Régime:</label>
+  <select id="regime" formControlName="regime" [(ngModel)]="myForm.value.regime">
+    <option value="Constipation">Constipation</option>
+    <option value="Diarrhée">Diarrhée</option>
+    <option value="Sans résiclus">Sans résiclus</option>
+    <option value="Sans gluten">Sans gluten</option>
+    <option value="Sans lactose">Sans lactose</option>
+    <option value="Sans fructose">Sans fructose</option>
+    <option value="Sans alcool">Sans alcool</option>
+    <option value="Epargne digestive">Epargne digestive</option>
+    <option value="IRC">IRC</option>
+    <option value="Hyposodé">Hyposodé</option>
+    <option value="Enrichi">Enrichi</option>
+    <option value="Diabétique">Diabétique</option>
+    <option value="Hypocalorique">Hypocalorique</option>
+    <option value="Sans aliments à risque">Sans aliments à risque</option>
+    <option value="Alimentation plaisir">Alimentation plaisir</option>
+    <option value="Aucun">Aucun</option>
+  </select>
+  <br>
+  <br>
+  <label for="texture">Spécificité Texture:</label>
+  <select id="texture" formControlName="texture" [(ngModel)]="myForm.value.texture">
+    <option value="Viande coupée">Viande coupée</option>
+    <option value="Tout coupée">Tout coupée</option>
+    <option value="Velours viande">Velours viande</option>
+    <option value="Velours complet">Velours complet</option>
+    <option value="Viande hachée au hachoir">Viande hachée au hachoir</option>
+    <option value="Finger food">Finger food</option>
+    <option value="Aucun">Aucun</option>
+  </select>
+  <br>
+  <br>
+  <button type="submit">Submit</button>
+  <button type="button" (click)="myForm.reset()">Annuler</button>
+</form>
